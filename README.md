@@ -1,0 +1,1 @@
+This Repo is for the CodeFellows Full-Stack Dev Accelerator: JavaScript Code Challenge.
