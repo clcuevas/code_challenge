@@ -10,7 +10,11 @@ $(function() {
 			} else {
 				employeesHTML += '<li class="out">';
 			}
-			employeesHTML += employee.name + '</li>';
+			if (employee.awesomeIndex) {
+				employeesHTML += employee.name + ' - ' + employee.occupation + ', Index: ' + employee.awesomeIndex + '</li>';
+			} else {
+				employeesHTML += employee.name + ' - ' + employee.occupation + '</li>';
+			}
 		});
 		employeesHTML += '</ul>';
 		$('#employeeList').html(employeesHTML);
