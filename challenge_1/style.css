@@ -303,6 +303,10 @@ h2 {
   font-size: 1.8em;
 }
 
+#awesome-index {
+  margin-top: 10px;
+}
+
 aside h2 {
   margin-bottom: 15px;
 }
