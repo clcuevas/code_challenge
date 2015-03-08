@@ -4,6 +4,7 @@ $(function() {
 
 	$.getJSON(url, function(response) {
 		var employeesHTML = '<ul class="bulleted">';
+
 		$.each(response, function(index, employee) {
 			if (employee.occupation === 'Programmer') {
 				employeesHTML += '<li class="in">';
@@ -19,5 +20,5 @@ $(function() {
 		employeesHTML += '</ul>';
 		$('#employeeList').html(employeesHTML);
 	}); //end getJSON
-
+	
 }); //end ready
