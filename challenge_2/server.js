@@ -1,6 +1,6 @@
 var http = require('http'),
 		fs = require('fs'),
-		index = fs.readFileSync('index2.html');
+		index = fs.readFileSync('index.html');
 
 var server = http.createServer(function(req, res) {
 		res.writeHead(200, {'Content-Type': 'text/html'});
