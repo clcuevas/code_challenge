@@ -10,9 +10,8 @@ var employees = [
 ];
 
 var indexOutput = document.getElementById('awesome-index');
-// var getAvgIndex = document.getElementById('awesome-index');
+var employeeOutput = document.getElementById('employeeList');
 var sum = 0;//sum container
-// var avgIndex = 0;//avg Awesome Index container
 
 //get the sum of all the Awesome Index in the array
 function sumAwesomeIndex() {
@@ -39,12 +38,30 @@ function avgAwesomeIndex() {
 	return avgIndex;
 }
 
-function sendAvgIndex() {
+function printAvgIndex() {
 	// console.log(avgIndex);//validate avg AwesomeIndex
-	var msg = '<h2>Avg Awesome Index: </h2>';
-	msg += avgAwesomeIndex();
+	var msg = '<h2>Avg Awesome Index: '+ avgAwesomeIndex() + '</h2>';
 	indexOutput.innerHTML = msg;//write output
-	console.log(indexOutput);
 }
 
-sendAvgIndex();
+function printEmployees() {
+	var employeesHTML = '<ul class"bulleted">';
+
+	for (var i = 0; i < employees.length; i++) {
+		if(employees[i].occupation === 'Programmer') {
+			employeesHTML += '<li class="yes">';
+		} else {
+			employeesHTML += '<li class="no">';
+		}
+		if(employees[i].awesomeIndex) {
+			employeesHTML += employees[i].name + ' - ' + employees[i].occupation + ', Awesome-Index: ' + employees[i].awesomeIndex + '</li>';
+		} else {
+			employeesHTML += employees[i].name + ' - ' + employees[i].occupation + '</li>';
+		}
+	}
+	employeesHTML += '</ul>';
+	employeeOutput.innerHTML = employeesHTML;
+}
+
+printEmployees();//run on load
+printAvgIndex();//run on load

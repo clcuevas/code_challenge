@@ -341,20 +341,20 @@ ul.bulleted li:before {
   width: 25px;
 }
 
-ul.bulleted .in {
+ul.bulleted .yes {
   color: #5A6772;
 }
 
-ul.bulleted .in:before {
+ul.bulleted li.yes:before {
   content: "YES";
   background-color: #5fcf80;
 }
 
-ul.bulleted .out {
+ul.bulleted .no {
   color: #A7B4BF;
 }
 
-ul.bulleted .out:before {
+ul.bulleted .no:before {
   content: "NO";
   background-color: #ed5a5a;
 }
