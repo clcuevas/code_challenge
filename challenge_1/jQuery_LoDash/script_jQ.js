@@ -23,10 +23,11 @@ $(document).ready(function() {
 			}
 		});
 
-		for (var i = 0; i < tempArray.length; i++) {
-			sum += tempArray[i];
-			console.log(sum);
-		}
+		// for (var i = 0; i < tempArray.length; i++) {
+		// 	sum += tempArray[i];
+		// 	console.log(sum);
+		// }
+		sum = _.sum(tempArray);//use lodash sum method instead
 
 		avg += Math.floor(sum / tempArray.length);
 		console.log(avg + " is the average");

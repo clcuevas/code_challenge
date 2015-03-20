@@ -12,10 +12,5 @@
 	{
 		"name": "Zaphod",
 		"occupation": "President of the Galaxy"
-	},
-	{
-		"name": "Claudia",
-		"occupation": "Programmer",
-		"awesomeIndex": 10
 	}
 ]
