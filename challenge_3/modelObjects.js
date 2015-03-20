@@ -4,8 +4,6 @@ function Library() {
 	this.shelves = [];
 }
 
-
-
 function Book(author, title) {
 	this.author = author;
 	this.title = title;
@@ -30,6 +28,15 @@ Shelf.prototype.removeBooks = function(book) {
 	this.books.splice(index, 1);
 }
 
+Shelf.prototype.addShelf = function() {
+	this.shelves.push(this.books);
+}
+
+Shelf.prototype.removeShelf = function(shelf) {
+	var index = this.shelves.indexOf(shelf);
+	this.shelves.splice(index, 1);
+}
+
 Shelf.prototype.shelfSummary = function() {
 	for(var i = 0; i < this.books.length; i++) {
 		this.books[i].describe();
@@ -41,6 +48,7 @@ shelf.addBooks("Joelle Charbonneau", "The Testing");
 shelf.addBooks("Marie Lu", "Legend");
 shelf.addBooks("Sarah J. Maas", "Heir of Fire");
 shelf.removeBooks("Heir");
+shelf.addShelf();
 shelf.shelfSummary();
 
 var shelfTwo = new Shelf();
@@ -50,4 +58,5 @@ shelfTwo.addBooks("Sarah J. Maas", "Heir of Fire");
 shelfTwo.addBooks("Ann Aguirre", "Enclave");
 shelfTwo.addBooks("Kelley Armstrong", "Sea of Shadows");
 shelfTwo.removeBooks("Sea");
+shelfTwo.addShelf();
 shelfTwo.shelfSummary();
