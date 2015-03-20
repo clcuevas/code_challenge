@@ -28,14 +28,12 @@ $(document).ready(function() {
 		// 	console.log(sum);
 		// }
 		sum = _.sum(tempArray);//use lodash sum method instead
-
+		//calculate avg
 		avg += Math.floor(sum / tempArray.length);
-		console.log(avg + " is the average");
 
 		employeesHTML += '</ul>';
 		avgIndex += avg + '</h2>';
 		$('#employeeList').html(employeesHTML);
 		$('#awesome-index').html(avgIndex);
 	}); //end getJSON
-	
 }); //end ready
