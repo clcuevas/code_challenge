@@ -1,4 +1,11 @@
 
+function Library() {
+	this.name = "Library";
+	this.shelves = [];
+}
+
+
+
 function Book(author, title) {
 	this.author = author;
 	this.title = title;
@@ -11,6 +18,8 @@ Book.prototype.describe = function() {
 function Shelf() {
 	this.books = [];
 }
+
+Shelf.prototype = new Library();//inheritance
 
 Shelf.prototype.addBooks = function(author, title) {
 	this.books.push(new Book(author, title));
@@ -33,3 +42,12 @@ shelf.addBooks("Marie Lu", "Legend");
 shelf.addBooks("Sarah J. Maas", "Heir of Fire");
 shelf.removeBooks("Heir");
 shelf.shelfSummary();
+
+var shelfTwo = new Shelf();
+shelfTwo.addBooks("Joelle Charbonneau", "Independent Study");
+shelfTwo.addBooks("Marie Lu", "Prodigy");
+shelfTwo.addBooks("Sarah J. Maas", "Heir of Fire");
+shelfTwo.addBooks("Ann Aguirre", "Enclave");
+shelfTwo.addBooks("Kelley Armstrong", "Sea of Shadows");
+shelfTwo.removeBooks("Sea");
+shelfTwo.shelfSummary();
